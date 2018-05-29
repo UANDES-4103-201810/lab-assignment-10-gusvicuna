@@ -1,6 +1,6 @@
 class CallbacksController < Devise::ApplicationController
-  def omniauth_auth
-    @user = User.from_omniauth(request.env["omniauth.auth"])
+  def facebook
+    @user = User.from_omniauth(request.env["omniauth.authorize"])
     sign_in_and_redirect @user
   end
 end
